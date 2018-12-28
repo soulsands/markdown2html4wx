@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>拖拽上传</title>
+    <style>
+        .area {
+            height: 500px;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="area">
+
+    </div>
+    <script>
+        document.addEventListener("dragleave", function (e) {
+            e.preventDefault();
+        }, false);
+        document.addEventListener("drop", function (e) {
+            e.preventDefault();
+        }, false);
+        document.addEventListener("dragenter", function (e) {
+            e.preventDefault();
+        }, false);
+        document.addEventListener("dragover", function (e) {
+            e.preventDefault();
+        }, false);
+
+        document.querySelector('.area').addEventListener('drop', (e) => {
+            e.preventDefault()
+            console.log(e);
+            console.log(e.dataTransfer.files);
+            let files = e.dataTransfer.files;
+            let read = new FileReader();
+            let num = 0;
+
+            function readfile(files) {
+                let file = files[num];
+                if(file == null || file ==undefined) return
+                read.readAsText(file);
+                read.onload = (file) => {
+                    console.log(read.result);
+                    num++
+                    readfile(files)
+                }
+            }
+            readfile(files)
+            Array.prototype.forEach.call(files, (element) => {
+                console.log(element);
+
+                // read.readAsText(element);
+                // console.log(read.result);
+            })
+            // files.forEach(element => {
+
+
+            // });
+        })
+    </script>
+</body>
+
+</html>
