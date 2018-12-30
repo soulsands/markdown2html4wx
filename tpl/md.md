@@ -76,6 +76,12 @@ markdown的语法类似html，但更简单，掌握十多个标记完全够用�
 function test() {
   console.log("notice the blank line before this function?");
 }
+function test() {
+  console.log("notice the blank line before this function?");
+}
+function test() {
+  console.log("notice the blank line before this function?");
+}
 ```
 
 ---
@@ -89,10 +95,10 @@ function test() {
 | Content Cell  | Content Cell  |
 ```
 
-| First Header | Second Header |
-| ------------ | ------------- |
-| Content Cell | Content Cell  |
-| Content Cell | Content Cell  |
+| First Header | Second Header                                        |
+| ------------ | ---------------------------------------------------- |
+| Content Cell | Content Cell啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊 |
+| Content Cell | Content Cell啊                                       |
 
 ----
 

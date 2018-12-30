@@ -8,12 +8,16 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
     <!-- <link rel="stylesheet" href="css/highlight/solarized-light.css"> -->
-    <link rel="stylesheet" href="prism.css">
-    <script src="prism.js"></script>
+    <!-- <link rel="stylesheet" href="prism.css"> -->
+    <!-- <script src="prism.js"></script> -->
+    <link rel="stylesheet" href="../highlighter/shCore.css">
+    <link rel="stylesheet" href="../highlighter/shThemeRDark.css">
+
+    <script src="../highlighter/shCore.js"></script>
+    <script src="../highlighter/shBrushJScript.js"></script>
 </head>
 
 <body>
-
     <article id="md-content">
 
 
@@ -61,17 +65,25 @@
 <p><strong>链接</strong>，<code>[链接内容](链接url)</code></p>
 <hr>
 <p><strong>代码块</strong>，这个对于程序员来说必不可少，选定语言，在typora里面可以自动高亮，并且不会格式转换</p>
-<pre class="hljs"><code class="language-js">//Here&#39;s an example:
+<section class="syntaxhighlighter"><pre class="brush: js"> //Here's an example:
 function test() {
-  console.log(&quot;notice the blank line before this function?&quot;);
-}</code></pre>
-<hr>
+  console.log("notice the blank line before this function?");
+}
+function test() {
+  console.log("notice the blank line before this function?");
+}
+function test() {
+  console.log("notice the blank line before this function?");
+}
+        </pre></section>
+    <hr>
 <p><strong>表格</strong></p>
-<pre class="hljs"><code class="language-js">| First Header  | Second Header |
+<section class="syntaxhighlighter"><pre class="brush: js"> | First Header  | Second Header |
 | ------------- | ------------- |
 | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |</code></pre>
-<table>
+| Content Cell  | Content Cell  |
+        </pre></section>
+    <table>
 <thead>
 <tr>
 <th>First Header</th>
@@ -80,11 +92,11 @@ function test() {
 </thead>
 <tbody><tr>
 <td>Content Cell</td>
-<td>Content Cell</td>
+<td>Content Cell啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</td>
 </tr>
 <tr>
 <td>Content Cell</td>
-<td>Content Cell</td>
+<td>Content Cell啊</td>
 </tr>
 </tbody></table>
 <hr>
@@ -144,6 +156,11 @@ function test() {
 
             }
         })
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.defaults['gutter'] = false;
+        SyntaxHighlighter.all()
+
+       
     </script>
 </body>
 

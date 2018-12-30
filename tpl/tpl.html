@@ -8,12 +8,16 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
     <!-- <link rel="stylesheet" href="css/highlight/solarized-light.css"> -->
-    <link rel="stylesheet" href="prism.css">
-    <script src="prism.js"></script>
+    <!-- <link rel="stylesheet" href="prism.css"> -->
+    <!-- <script src="prism.js"></script> -->
+    <link rel="stylesheet" href="../highlighter/shCore.css">
+    <link rel="stylesheet" href="../highlighter/shThemeRDark.css">
+
+    <script src="../highlighter/shCore.js"></script>
+    <script src="../highlighter/shBrushJScript.js"></script>
 </head>
 
 <body>
-
     <article id="md-content">
 
     </article>
@@ -37,6 +41,11 @@
 
             }
         })
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.defaults['gutter'] = false;
+        SyntaxHighlighter.all()
+
+       
     </script>
 </body>
 
