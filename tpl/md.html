@@ -1,10 +1,29 @@
-<hr>
-<h2 id="typora-copy-images-to-mark-it-down">typora-copy-images-to: mark it down</h2>
-<blockquote>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="css/highlight/solarized-light.css"> -->
+    <link rel="stylesheet" href="prism.css">
+    <script src="prism.js"></script>
+</head>
+
+<body>
+
+    <article id="md-content">
+
+
+     <blockquote>
 <p>开号宣言中提到了markdown,那就讲讲markdown</p>
 </blockquote>
-<h2 id="-markdown">啥是markdown</h2>
-<p>markdown是某种<strong>标记语言</strong>。</p>
+<h2 class='title'>
+     <span>啥是markdown</span>
+     </h2>
+     <p>markdown是某种<strong>标记语言</strong>。</p>
 <p>语言是某种约定。</p>
 <p>就像拉钩上吊一百年不许变那样的约定。</p>
 <p>只要约定好，这些被成为文字的东西便能传达意义。我们说的话是自然发展出的语言，而计算机语言是人造的和计算机的约定。</p>
@@ -21,8 +40,10 @@
 <p>而markdown添加的，包括分级标题、序列、引用、代码块、表格、图片，链接和一系列的具体文字修饰，比如加粗、下划线、高亮、删除线、斜线、脚注。</p>
 <p><strong>markdown体现一种权衡</strong>。权衡因素包括写起来是不是方便，文本处理起来是否方便，读者是否看得更懂。</p>
 <p>因为markdown的符号本身是格式明确的字符，对于正则很友好，所以可以很方便对其进行二次处理。它只提供文本，而字体、字号、字间距、行间距等等都可以用主题来自定义。</p>
-<h2 id="markdown-">markdown怎么用</h2>
-<p>学点语法，语法简单。</p>
+<h2 class='title'>
+     <span>markdown怎么用</span>
+     </h2>
+     <p>学点语法，语法简单。</p>
 <p><strong>标题</strong>，一堆井号，<code>####</code>井号越少标题越大。</p>
 <p><strong>序列</strong>，一个横杠加空格 <code>-</code> ,解析出来出来点点。</p>
 <ul>
@@ -40,13 +61,13 @@
 <p><strong>链接</strong>，<code>[链接内容](链接url)</code></p>
 <hr>
 <p><strong>代码块</strong>，这个对于程序员来说必不可少，选定语言，在typora里面可以自动高亮，并且不会格式转换</p>
-<pre><code class="language-js">//Here&#39;s an example:
+<pre class="hljs"><code class="language-js">//Here&#39;s an example:
 function test() {
   console.log(&quot;notice the blank line before this function?&quot;);
 }</code></pre>
 <hr>
 <p><strong>表格</strong></p>
-<pre><code class="language-js">| First Header  | Second Header |
+<pre class="hljs"><code class="language-js">| First Header  | Second Header |
 | ------------- | ------------- |
 | Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  |</code></pre>
@@ -88,8 +109,10 @@ function test() {
 <hr>
 <p>还有一些拓展功能，可能会依赖特定的编辑器。</p>
 <p>比如可以画流程图，支持表情等等。</p>
-<h1 id="-">结语</h1>
-<p>作为除开号宣言的第一篇文章，它非常简陋朴实。</p>
+<h1 class='title'>
+     <span>结语</span>
+     </h1>
+     <p>作为除开号宣言的第一篇文章，它非常简陋朴实。</p>
 <p>本身是用typora加markdown来写的。</p>
 <p>markdown这东西细细品味的话，有点意思。</p>
 <p>简单粗暴，在程序员群体中比较常见。</p>
@@ -98,3 +121,30 @@ function test() {
 <p>word易用难精，而markdown建立了一定门槛，但要学的也不多，可以说人人都可以是markdown高手。</p>
 <p>本身也适合非程序员群体，算是一种跨界的意味。</p>
 <p>此外，还有git，做版本管理总比一堆添加数字的word文件好，还有啥啥终结版、最终版、最最终版、绝对终版。另外GitHub等仓库，据说有人用这个来一起写书，倒是有趣。</p>
+
+
+    </article>
+
+    <span class="thank">谢谢</span>
+    <script>
+        let wrapper = document.querySelector('#md-content');
+
+        function recursiveDOM(dom, callback) {
+            for (let index = 0; index < dom.children.length; index++) {
+                const element = dom.children[index];
+                callback(element)
+                // if(element.children)
+                recursiveDOM(element, callback)
+            }
+        }
+
+        recursiveDOM(wrapper, (dom) => {
+            if (dom.offsetWidth > 360) {
+                console.dir(dom)
+
+            }
+        })
+    </script>
+</body>
+
+</html>

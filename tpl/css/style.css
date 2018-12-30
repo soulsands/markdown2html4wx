@@ -1,0 +1,104 @@
+html,
+body {
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+p,
+.title,
+pre,
+table {
+  margin: 1em 0;
+}
+#md-content {
+  color: #d1d1d1;
+  background-color: #4c4c4d;
+  word-break: initial;
+}
+#md-content .title {
+  padding: 5px 0;
+  color: #3d3d3d;
+  text-align: center;
+  font-size: 1.5em;
+}
+#md-content .title span {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #adadad), to(#d1d1d1));
+  background: -webkit-linear-gradient(top, #adadad 0, #d1d1d1 100%);
+  background: linear-gradient(to bottom, #adadad 0, #d1d1d1 100%);
+  border-radius: 5px;
+  padding: 0 10px;
+  border-left: 10px solid #3d3d3d;
+}
+#md-content blockquote {
+  color: #3d3d3d;
+  background-color: #d1d1d1;
+  border-left: 10px solid #adadad;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding: 1px 1em;
+  -webkit-margin-end: 0;
+     -moz-margin-end: 0;
+          margin-inline-end: 0;
+  -webkit-margin-start: 0;
+     -moz-margin-start: 0;
+          margin-inline-start: 0;
+  font-style: italic;
+}
+#md-content ul {
+  list-style: circle;
+}
+#md-content pre {
+  border: 1px solid #d1d1d1;
+  border-radius: 10px;
+  overflow: hidden;
+  white-space: pre-wrap;
+}
+#md-content table {
+  padding: 0;
+  word-break: initial;
+  width: 100%;
+  border-collapse: collapse;
+}
+#md-content table tr {
+  border-top: 1px solid #dfe2e5;
+  margin: 0;
+  padding: 0;
+}
+#md-content table tr:nth-child(2n),
+#md-content thead {
+  background-color: #3f3f41;
+}
+#md-content table tr th {
+  font-weight: bold;
+  border: 1px solid #dfe2e5;
+  border-bottom: 0;
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px;
+}
+#md-content table tr td {
+  border: 1px solid #dfe2e5;
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px;
+}
+#md-content table tr th:first-child,
+#md-content table tr td:first-child {
+  margin-top: 0;
+}
+#md-content table tr th:last-child,
+#md-content table tr td:last-child {
+  margin-bottom: 0;
+}
+#md-content strong,
+#md-content em,
+#md-content del,
+#md-content u {
+  color: #fff;
+}
+#md-content code {
+  background: #fdf6e3;
+  color: #2aa198;
+  border-radius: 2px;
+}
+/*# sourceMappingURL=./style.css.map */
