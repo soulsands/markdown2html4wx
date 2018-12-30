@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="./css/lib/highlighter/shCore.css">
+    <link rel="stylesheet" href="./css/lib/highlighter/shThemeRDark.css">
+
+    <script src="./js/lib/highlighter/shCore.js"></script>
+    <script src="./js/lib/highlighter/shBrushJScript.js"></script>
+    <script src="./js/lib/highlighter/shBrushCss.js"></script>
+    <script src="./js/lib/highlighter/shBrushPhp.js"></script>
+    <style>
+        .thank{
+            color: #fff;
+        }
+        
+    </style>
+</head>
+
+<body>
+        <article id="md-content">
+            </article>
+    <span class="thank">.</span>
+    <script>
+        function selectText(element) {
+        var text =element
+        if (document.body.createTextRange) {
+            var range = document.body.createTextRange();
+            range.moveToElementText(text);
+            range.select();
+        } else if (window.getSelection) {
+            var selection = window.getSelection();
+            var range = document.createRange();
+            range.selectNodeContents(text);
+            selection.removeAllRanges();
+            selection.addRange(range);
+            /*if(selection.setBaseAndExtent){
+                selection.setBaseAndExtent(text, 0, text, 1);
+            }*/
+        } else {
+            alert("none");
+        }
+    }
+        // let wrapper = document.querySelector('#md-content');
+        // function recursiveDOM(dom, callback) {
+        //     for (let index = 0; index < dom.children.length; index++) {
+        //         const element = dom.children[index];
+        //         callback(element)
+        //         // if(element.children)
+        //         recursiveDOM(element, callback)
+        //     }
+        // }
+
+        // recursiveDOM(wrapper, (dom) => {
+        //     if (dom.offsetWidth > 360) {
+        //         console.dir(dom)
+        //     }
+        // })
+        let wrapper = document.querySelector('#md-content');
+        wrapper.innerHTML = window.parent.mdContent;
+        
+        
+            SyntaxHighlighter.defaults['toolbar'] = false;
+            SyntaxHighlighter.defaults['gutter'] = false;
+            
+            SyntaxHighlighter.all()
+            selectText(document.body)
+    </script>
+</body>
+
+</html>
