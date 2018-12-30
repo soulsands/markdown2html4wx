@@ -33,7 +33,7 @@ function geneIframe(html) {
         iframe.id = "frame",
         // iframe.style = "display:none;",
         iframe.name = "polling",
-        iframe.src = "show.html";
+        iframe.src = "online/show.html";
         iframe.width = "360px";
         iframe.height = "475px";
     iframeCon.appendChild(iframe);
