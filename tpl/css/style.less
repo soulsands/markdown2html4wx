@@ -25,11 +25,18 @@ table {
     color: @light-font;
     background-color: @light-bg;
     word-break: initial;
-    .title {
+    h1,h2 {
         padding: 5px 0;
-        color: @title-cl;
         text-align: center;
         font-size: 1.5em;
+    } 
+    h3,h4{
+        font-size: 1.3em;
+        text-align: left;
+        padding: 0 1em;
+    }
+    .title{
+        color: @title-cl;
         span {
             background: @title-bg;
             border-radius: 5px;
@@ -37,7 +44,11 @@ table {
             border-left: 10px solid aquamarine; // border-right: 10px solid @dark-font;
             box-shadow: 0px 0px 10px #000;
         }
-    } // p:nth-of-type(2n) {
+    }
+    
+    
+    
+    // p:nth-of-type(2n) {
     //     background-color: @deep-bg;
     //     color: @mid-font;
     // }

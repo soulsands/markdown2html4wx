@@ -15,11 +15,20 @@ table {
   background-color: #4c4c4d;
   word-break: initial;
 }
-#md-content .title {
+#md-content h1,
+#md-content h2 {
   padding: 5px 0;
-  color: #3d3d3d;
   text-align: center;
   font-size: 1.5em;
+}
+#md-content h3,
+#md-content h4 {
+  font-size: 1.3em;
+  text-align: left;
+  padding: 0 1em;
+}
+#md-content .title {
+  color: #3d3d3d;
 }
 #md-content .title span {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #adadad), to(#d1d1d1));
