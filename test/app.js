@@ -31,6 +31,14 @@ rendererMD.heading = function (text, level) {
      </h${level}>
      `
 }
+rendererMD.table = function (thead, tbody) {
+    return `<figure class='table'><table>
+    <thead> ${thead} </thead>
+    <tbody> ${tbody} </tbody>
+    </table></figure>`
+   
+
+}
 //包裹pre，复制的时候不会去掉，
 rendererMD.code = (text, level, and) => {
     // console.log(level);

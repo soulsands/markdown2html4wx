@@ -79,14 +79,13 @@
 | Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  |
         </textarea></pre>
-    <table>
-<thead>
-<tr>
+    <figure class='table'><table>
+    <thead> <tr>
 <th>First Header</th>
 <th>Second Header</th>
 </tr>
-</thead>
-<tbody><tr>
+ </thead>
+    <tbody> <tr>
 <td>Content Cell</td>
 <td>Content Cell啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</td>
 </tr>
@@ -94,8 +93,8 @@
 <td>Content Cell</td>
 <td>Content Cell啊</td>
 </tr>
-</tbody></table>
-<hr>
+ </tbody>
+    </table></figure><hr>
 <p><strong>脚注</strong></p>
 <p>You can create footnotes like this[^footnote].</p>
 <p>[^footnote]: Here is the <em>text</em> of the <strong>footnote</strong>.</p>
@@ -151,30 +150,29 @@
         // })
 
         let codeBlocks = document.querySelectorAll('.code-mirrow');
-      
+
 
         for (let index = 0; index < codeBlocks.length; index++) {
             const element = codeBlocks[index];
-            let lang =  element.dataset.lang;
-            let match ={
-                js:'javascript',
-                javascript:'javascript',
-                html:"htmlmixed",
-                css:'css'
+            let lang = element.dataset.lang;
+            let match = {
+                js: 'javascript',
+                javascript: 'javascript',
+                html: "htmlmixed",
+                css: 'css'
             }
-            console.log( match[lang]);
-            console.log(lang);
-            
+            console.log(match[lang]);
+
+
             CodeMirror.fromTextArea(element, {
-                readOnly:'nocursor',
-                theme:'solarized light',
+                readOnly: 'nocursor',
+                theme: 'solarized light',
                 mode: {
-                    name: match[lang],
+                    name: match[lang] || 'javascript',
                     scriptTypes: [{
-                            matches: /\/x-handlebars-template|\/x-mustache/i,
-                            mode: null
-                        }
-                    ]
+                        matches: /\/x-handlebars-template|\/x-mustache/i,
+                        mode: null
+                    }]
                 }
             });
         }

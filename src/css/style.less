@@ -39,18 +39,17 @@ body {
         display: flex;
         justify-content: center;
         span {
-            padding-top: 20px;
-            // line-height: 2;
+            padding-top: 20px; // line-height: 2;
             display: block;
-            color: #eee;
-            border-radius: 3px;
+            color: #d8d8d8;
+            border-radius: 2px;
             padding: 0 30px; // border-bottom: 5px solid aquamarine; // border-right: 10px solid @dark-font;
-            box-shadow:inset  0px 3px 3px rgba(0,0,0,.4);
+            box-shadow: inset 0px 3px 10px rgba(0, 0, 0, .4);
             transform: translate3d(100);
             background: @deep-bg;
-            background-image:linear-gradient(90deg, rgba(0,0,0,.4) 0, rgba(0,0,0,.6) 100%), linear-gradient(90deg, aquamarine 11px, transparent 0), linear-gradient(90deg, crimson 23px, transparent 0), linear-gradient(90deg, rgb(250, 233, 1) 41px, transparent 0);
+            background-image: linear-gradient(90deg, rgba(0, 0, 0, .7) 0, rgba(0, 0, 0, .9) 100%), linear-gradient(90deg, aquamarine 11px, transparent 0), linear-gradient(90deg, crimson 23px, transparent 0), linear-gradient(90deg, rgb(250, 233, 1) 41px, transparent 0);
             background-repeat: repeat-x;
-            background-size:100% 80%, calc(100%-70px) 100%, 61px 100%, 83px 100%;
+            background-size: 100% 80%, calc(100%-60px) 100%, 61px 100%, 83px 100%;
         }
     }
     p,
@@ -69,7 +68,7 @@ body {
         margin-inline-end: 0;
         margin-inline-start: 0;
         font-style: italic;
-        box-shadow:inset  0px 0px 4px #222;
+        box-shadow: inset 0px 0px 4px #222;
         border-radius: 3px;
     }
     ul {
@@ -81,12 +80,19 @@ body {
         overflow-x: scroll;
         font-size: 13px;
         background-color: #fdf6e3;
+        border-radius: 3px;
         pre {
             white-space: nowrap;
         }
     }
+    .table {
+        box-sizing: border-box;
+        margin: 1.2em 0;
+        overflow-x: auto;
+      
+    }
     table {
-        box-shadow: 0px 3px 3px #222;
+        border-radius: 3px;
         padding: 0;
         width: 100%;
         border-collapse: collapse;
