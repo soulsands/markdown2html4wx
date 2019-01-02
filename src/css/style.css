@@ -1,0 +1,169 @@
+body {
+  line-height: 1.8;
+  margin: 0;
+  padding: 0 8px;
+}
+#md-content {
+  color: #d1d1d1;
+  background-color: #4c4c4d;
+  word-break: initial;
+  overflow: hidden;
+  padding: 0 2px 0 2px;
+}
+#md-content h1,
+#md-content h2 {
+  text-align: center;
+}
+#md-content h1 {
+  padding: 5px 0;
+  font-size: 1.5em;
+}
+#md-content h2 {
+  font-size: 1.4em;
+}
+#md-content h3 {
+  font-size: 1.2em;
+}
+#md-content h4 {
+  font-size: 1em;
+}
+#md-content .title {
+  color: #3d3d3d;
+}
+#md-content .title span {
+  color: rgba(0, 0, 0, 0.7);
+  border-radius: 3px;
+  padding: 0 30px;
+  -webkit-box-shadow: inset 0px 1px 2px #222;
+          box-shadow: inset 0px 1px 2px #222;
+  -webkit-transform: translate3d(100);
+          transform: translate3d(100);
+  background: #f0e2db;
+  background-image: -webkit-linear-gradient(left, aquamarine 11px, transparent 0), -webkit-linear-gradient(left, crimson 23px, transparent 0), -webkit-linear-gradient(left, #fae901 41px, transparent 0);
+  background-image: linear-gradient(90deg, aquamarine 11px, transparent 0), linear-gradient(90deg, crimson 23px, transparent 0), linear-gradient(90deg, #fae901 41px, transparent 0);
+  -webkit-background-size: 41px 100%, 61px 100%, 83px 100%;
+          background-size: 41px 100%, 61px 100%, 83px 100%;
+}
+#md-content p,
+#md-content .title,
+#md-content pre,
+#md-content table {
+  margin: 1.3em 0;
+}
+#md-content blockquote {
+  color: #adadad;
+  background-color: #3d3d3d;
+  border-left: 10px solid #adadad;
+  padding: 1px 1em;
+  -webkit-margin-end: 0;
+     -moz-margin-end: 0;
+          margin-inline-end: 0;
+  -webkit-margin-start: 0;
+     -moz-margin-start: 0;
+          margin-inline-start: 0;
+  font-style: italic;
+  -webkit-box-shadow: inset 0px 1px 2px #222;
+          box-shadow: inset 0px 1px 2px #222;
+  border-radius: 3px;
+}
+#md-content ul {
+  list-style: circle;
+  padding-left: 20px;
+}
+#md-content pre {
+  border: 1px solid #d1d1d1;
+  border-radius: 10px;
+  overflow: hidden;
+  white-space: pre-wrap;
+  -webkit-box-shadow: inset 0px 1px 4px #000;
+          box-shadow: inset 0px 1px 4px #000;
+}
+#md-content .syntaxhighlighter {
+  font-size: 12px !important;
+  -webkit-box-shadow: inset 0px 1px 4px #000;
+          box-shadow: inset 0px 1px 4px #000;
+}
+#md-content .syntaxhighlighter table {
+  margin-top: 10px;
+  font-size: 12px;
+  border: none;
+}
+#md-content .syntaxhighlighter table code {
+  background-color: transparent;
+  border-radius: 2px;
+}
+#md-content .syntaxhighlighter table td,
+#md-content .syntaxhighlighter table tr {
+  border: none;
+  padding: 0;
+}
+#md-content table {
+  -webkit-box-shadow: 0px 3px 3px #222;
+          box-shadow: 0px 3px 3px #222;
+  padding: 0;
+  word-break: initial;
+  width: 100%;
+  border-collapse: collapse;
+  overflow: auto !important;
+  font-size: 12px !important;
+}
+#md-content table tr {
+  border-top: 1px solid #dfe2e5;
+  margin: 0;
+  padding: 0;
+}
+#md-content table tr:nth-child(2n),
+#md-content thead {
+  background-color: #3f3f41;
+}
+#md-content table tr th {
+  font-weight: bold;
+  border: 1px solid #dfe2e5;
+  background-color: transparent;
+  border-bottom: 0;
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px;
+}
+#md-content table tr td {
+  border: 1px solid #dfe2e5;
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px;
+}
+#md-content table tr th:first-child,
+#md-content table tr td:first-child {
+  margin-top: 0;
+}
+#md-content table tr th:last-child,
+#md-content table tr td:last-child {
+  margin-bottom: 0;
+}
+#md-content hr {
+  background: #f0e2db;
+  background-image: -webkit-linear-gradient(left, aquamarine 11px, transparent 0), -webkit-linear-gradient(left, crimson 23px, transparent 0), -webkit-linear-gradient(left, #fae901 41px, transparent 0);
+  background-image: linear-gradient(90deg, aquamarine 11px, transparent 0), linear-gradient(90deg, crimson 23px, transparent 0), linear-gradient(90deg, #fae901 41px, transparent 0);
+  -webkit-background-size: 41px 100%, 61px 100%, 83px 100%;
+          background-size: 41px 100%, 61px 100%, 83px 100%;
+  border: none;
+  height: 3px;
+  -webkit-box-shadow: inset 0px 0px 3px rgba(255, 255, 255, 0.5);
+          box-shadow: inset 0px 0px 3px rgba(255, 255, 255, 0.5);
+  border-radius: 3px;
+  margin: 1em 5% 3em;
+}
+#md-content strong,
+#md-content em,
+#md-content del,
+#md-content u {
+  color: #eee;
+  border-radius: 3px;
+  padding: 0 2px;
+  -webkit-box-shadow: inset 0px 0px 2px #333;
+          box-shadow: inset 0px 0px 2px #333;
+}
+#md-content code {
+  background-color: #3d3d3d;
+  border-radius: 2px;
+}
+/*# sourceMappingURL=./style.css.map */
