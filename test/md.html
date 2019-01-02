@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="../src/css/lib/codemirror.css">
+    <link rel="stylesheet" href="../src/css/lib/solarized.css">
+    <script src="../src/js/lib/codemirror.js"></script>
+    <script src="../src/js/lib/mode/xml/xml.js"></script>
+    <script src="../src/js/lib/mode/javascript/javascript.js"></script>
+    <script src="../src/js/lib/mode/css/css.js"></script>
+    <script src="../src/js/lib/mode/htmlmixed/htmlmixed.js"></script>
     <link rel="stylesheet" href="../src/css/style.css">
-    <!-- <link rel="stylesheet" href="css/highlight/solarized-light.css"> -->
-    <!-- <link rel="stylesheet" href="prism.css"> -->
-    <!-- <script src="prism.js"></script> -->
-    <link rel="stylesheet" href="../highlighter/shCore.css">
-    <link rel="stylesheet" href="../highlighter/shThemeRDark.css">
 
-    <script src="../highlighter/shCore.js"></script>
-    <script src="../highlighter/shBrushJScript.js"></script>
 </head>
 
 <body>
@@ -65,24 +65,20 @@
 <p><strong>链接</strong>，<code>[链接内容](链接url)</code></p>
 <hr>
 <p><strong>代码块</strong>，这个对于程序员来说必不可少，选定语言，在typora里面可以自动高亮，并且不会格式转换</p>
-<section class="syntaxhighlighter"><pre class="brush: js"> //Here's an example:
-function test() {
-  console.log("notice the blank line before this function?");
+<pre class="md-fences"><textarea data-lang="js" class="code-mirrow">let a = 1;
+        </textarea></pre>
+    <pre class="md-fences"><textarea data-lang="html" class="code-mirrow"><a></a>
+        </textarea></pre>
+    <pre class="md-fences"><textarea data-lang="css" class="code-mirrow">a{
+    color:red;
 }
-function test() {
-  console.log("notice the blank line before this function?");
-}
-function test() {
-  console.log("notice the blank line before this function?");
-}
-        </pre></section>
-    <hr>
-<p><strong>表格</strong></p>
-<section class="syntaxhighlighter"><pre class="brush: js"> | First Header  | Second Header |
+        </textarea></pre>
+    <p><strong>表格</strong></p>
+<pre class="md-fences"><textarea data-lang="js" class="code-mirrow">| First Header  | Second Header |
 | ------------- | ------------- |
 | Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  |
-        </pre></section>
+        </textarea></pre>
     <table>
 <thead>
 <tr>
@@ -139,28 +135,49 @@ function test() {
 
     <span class="thank">谢谢</span>
     <script>
-        let wrapper = document.querySelector('#md-content');
+        // let wrapper = document.querySelector('#md-content');
+        // function recursiveDOM(dom, callback) {
+        //     for (let index = 0; index < dom.children.length; index++) {
+        //         const element = dom.children[index];
+        //         callback(element)
+        //         // if(element.children)
+        //         recursiveDOM(element, callback)
+        //     }
+        // }
+        // recursiveDOM(wrapper, (dom) => {
+        //     if (dom.offsetWidth > 360) {
+        //         console.dir(dom)
+        //     }
+        // })
 
-        function recursiveDOM(dom, callback) {
-            for (let index = 0; index < dom.children.length; index++) {
-                const element = dom.children[index];
-                callback(element)
-                // if(element.children)
-                recursiveDOM(element, callback)
+        let codeBlocks = document.querySelectorAll('.code-mirrow');
+      
+
+        for (let index = 0; index < codeBlocks.length; index++) {
+            const element = codeBlocks[index];
+            let lang =  element.dataset.lang;
+            let match ={
+                js:'javascript',
+                javascript:'javascript',
+                html:"htmlmixed",
+                css:'css'
             }
+            console.log( match[lang]);
+            console.log(lang);
+            
+            CodeMirror.fromTextArea(element, {
+                readOnly:'nocursor',
+                theme:'solarized light',
+                mode: {
+                    name: match[lang],
+                    scriptTypes: [{
+                            matches: /\/x-handlebars-template|\/x-mustache/i,
+                            mode: null
+                        }
+                    ]
+                }
+            });
         }
-
-        recursiveDOM(wrapper, (dom) => {
-            if (dom.offsetWidth > 360) {
-                console.dir(dom)
-
-            }
-        })
-        SyntaxHighlighter.defaults['toolbar'] = false;
-        SyntaxHighlighter.defaults['gutter'] = false;
-        SyntaxHighlighter.all()
-
-       
     </script>
 </body>
 

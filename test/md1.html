@@ -6,15 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="../src/css/style.css">
-    <!-- <link rel="stylesheet" href="css/highlight/solarized-light.css"> -->
-    <!-- <link rel="stylesheet" href="prism.css"> -->
-    <!-- <script src="prism.js"></script> -->
-    <link rel="stylesheet" href="../highlighter/shCore.css">
-    <link rel="stylesheet" href="../highlighter/shThemeRDark.css">
+    <link rel="stylesheet" href="../src/css/lib/codemirror.css">
+    <script src="../src/js/lib/codemirror.js"></script>
 
-    <script src="../highlighter/shCore.js"></script>
-    <script src="../highlighter/shBrushJScript.js"></script>
+    <link rel="stylesheet" href="../src/css/style.css">
+
 </head>
 
 <body>
@@ -204,28 +200,28 @@
 
     <span class="thank">谢谢</span>
     <script>
-        let wrapper = document.querySelector('#md-content');
+        // let wrapper = document.querySelector('#md-content');
+        // function recursiveDOM(dom, callback) {
+        //     for (let index = 0; index < dom.children.length; index++) {
+        //         const element = dom.children[index];
+        //         callback(element)
+        //         // if(element.children)
+        //         recursiveDOM(element, callback)
+        //     }
+        // }
+        // recursiveDOM(wrapper, (dom) => {
+        //     if (dom.offsetWidth > 360) {
+        //         console.dir(dom)
+        //     }
+        // })
 
-        function recursiveDOM(dom, callback) {
-            for (let index = 0; index < dom.children.length; index++) {
-                const element = dom.children[index];
-                callback(element)
-                // if(element.children)
-                recursiveDOM(element, callback)
-            }
+        let codeBlocks = document.querySelectorAll('.code-mirrow');
+        for (let index = 0; index < codeBlocks.length; index++) {
+            const element = codeBlocks[index];
+            CodeMirror.fromTextArea(element, {
+                lineNumbers: true
+            });
         }
-
-        recursiveDOM(wrapper, (dom) => {
-            if (dom.offsetWidth > 360) {
-                console.dir(dom)
-
-            }
-        })
-        SyntaxHighlighter.defaults['toolbar'] = false;
-        SyntaxHighlighter.defaults['gutter'] = false;
-        SyntaxHighlighter.all()
-
-       
     </script>
 </body>
 

@@ -12,7 +12,6 @@ body {
 @dark-font: #3d3d3d;
 @blockquote-bg: #e8e6e8;
 @title-cl: @dark-font;
-@title-bg: @deep-bg;
 #md-content {
     color: @light-font;
     background-color: @light-bg;
@@ -37,22 +36,27 @@ body {
         font-size: 1em;
     }
     .title {
-        color: @title-cl;
+        display: flex;
+        justify-content: center;
         span {
-            color: rgba(0, 0, 0, .7); // background: @title-bg;
+            padding-top: 20px;
+            // line-height: 2;
+            display: block;
+            color: #eee;
             border-radius: 3px;
             padding: 0 30px; // border-bottom: 5px solid aquamarine; // border-right: 10px solid @dark-font;
             box-shadow: inset 0px 1px 2px #222;
             transform: translate3d(100);
-            background: hsl(20, 40%, 90%);
-            background-image: linear-gradient(90deg, aquamarine 11px, transparent 0), linear-gradient(90deg, crimson 23px, transparent 0), linear-gradient(90deg, rgb(250, 233, 1) 41px, transparent 0);
-            background-size: 41px 100%, 61px 100%, 83px 100%; // -webkit-text-stroke: 1px #fff;
+            background: @deep-bg;
+            background-image:linear-gradient(90deg, rgba(0,0,0,.4) 0, rgba(0,0,0,.6) 100%), linear-gradient(90deg, aquamarine 11px, transparent 0), linear-gradient(90deg, crimson 23px, transparent 0), linear-gradient(90deg, rgb(250, 233, 1) 41px, transparent 0);
+            background-repeat: repeat-x;
+            background-size:100% 80%, calc(100%-70px) 100%, 61px 100%, 83px 100%;
         }
     }
     p,
     .title,
-    pre,
-    table {
+    table,
+    .md-fences {
         margin: 1.3em 0;
     }
     blockquote {
@@ -72,39 +76,22 @@ body {
         list-style: circle;
         padding-left: 20px;
     }
-    pre {
-        border: 1px solid @light-font;
-        border-radius: 10px;
-        overflow: hidden;
-        white-space: pre-wrap;
-        box-shadow: inset 0px 1px 4px #000;
-    }
-    .syntaxhighlighter {
-        font-size: 12px !important;
-        box-shadow: inset 0px 1px 4px #000;
-        table {
-            margin-top: 10px;
-            font-size: 12px;
-            border: none;
-            code {
-                background-color: transparent;
-                border-radius: 2px;
-            }
-            td,
-            tr {
-                border: none;
-                padding: 0;
-            }
+    .md-fences {
+        width: 100%;
+        overflow-x: scroll;
+        font-size: 13px;
+        background-color: #fdf6e3;
+        pre {
+            white-space: nowrap;
         }
     }
     table {
         box-shadow: 0px 3px 3px #222;
         padding: 0;
-        word-break: initial;
         width: 100%;
         border-collapse: collapse;
-        overflow: auto !important;
-        font-size: 12px !important;
+        overflow-x: scroll;
+        font-size: 12px;
     }
     table tr {
         border-top: 1px solid #dfe2e5;
@@ -116,6 +103,7 @@ body {
         background-color: @deep-bg;
     }
     table tr th {
+        word-break: keep-all;
         font-weight: bold;
         border: 1px solid #dfe2e5;
         background-color: transparent;
@@ -125,6 +113,7 @@ body {
         padding: 6px 13px;
     }
     table tr td {
+        word-break: keep-all;
         border: 1px solid #dfe2e5;
         text-align: left;
         margin: 0;
@@ -139,8 +128,6 @@ body {
         margin-bottom: 0;
     }
     hr {
-        // background: linear-gradient(90deg, #C9C8BB 0, #C9C8BB 10%, #E0F5EF 12%, #E0F5EF 16%, #C9C8BB 18%, #C9C8BB 20%, #E0F5EF 22%, #E0F5EF 26%, #C9C8BB 28%, #C9C8BB 100%);
-        // font-size: 20px;
         background: hsl(20, 40%, 90%);
         background-image: linear-gradient(90deg, aquamarine 11px, transparent 0), linear-gradient(90deg, crimson 23px, transparent 0), linear-gradient(90deg, rgb(250, 233, 1) 41px, transparent 0);
         background-size: 41px 100%, 61px 100%, 83px 100%;

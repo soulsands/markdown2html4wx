@@ -31,16 +31,17 @@ rendererMD.heading = function (text, level) {
      </h${level}>
      `
 }
-//包裹section，复制的时候不会去掉，
+//包裹pre，复制的时候不会去掉，
 rendererMD.code = (text, level, and) => {
-    return `<section class="syntaxhighlighter"><pre class="brush: js"> ${text}
-        </pre></section>
+    // console.log(level);
+    return `<pre class="md-fences"><textarea data-lang="${level}" class="code-mirrow">${text}
+        </textarea></pre>
     `
 }
 marked.setOptions({
     renderer: rendererMD,
 });
-let filename = 'md1';
+let filename = 'md';
 
 let tmp = fs.readFileSync('./tpl.html', 'utf8');
 let str = fs.readFileSync(filename + '.md', 'utf8');

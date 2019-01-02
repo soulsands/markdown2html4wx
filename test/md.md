@@ -72,19 +72,24 @@ markdown的语法类似html，但更简单，掌握十多个标记完全够用�
 **代码块**，这个对于程序员来说必不可少，选定语言，在typora里面可以自动高亮，并且不会格式转换
 
 ```js
-//Here's an example:
-function test() {
-  console.log("notice the blank line before this function?");
-}
-function test() {
-  console.log("notice the blank line before this function?");
-}
-function test() {
-  console.log("notice the blank line before this function?");
+let a = 1;
+```
+
+```html
+<a></a>
+```
+
+```css
+a{
+    color:red;
 }
 ```
 
----
+
+
+
+
+
 
 **表格**
 

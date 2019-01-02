@@ -28,26 +28,36 @@ body {
   font-size: 1em;
 }
 #md-content .title {
-  color: #3d3d3d;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 #md-content .title span {
-  color: rgba(0, 0, 0, 0.7);
+  padding-top: 20px;
+  display: block;
+  color: #eee;
   border-radius: 3px;
   padding: 0 30px;
   -webkit-box-shadow: inset 0px 1px 2px #222;
           box-shadow: inset 0px 1px 2px #222;
   -webkit-transform: translate3d(100);
           transform: translate3d(100);
-  background: #f0e2db;
-  background-image: -webkit-linear-gradient(left, aquamarine 11px, transparent 0), -webkit-linear-gradient(left, crimson 23px, transparent 0), -webkit-linear-gradient(left, #fae901 41px, transparent 0);
-  background-image: linear-gradient(90deg, aquamarine 11px, transparent 0), linear-gradient(90deg, crimson 23px, transparent 0), linear-gradient(90deg, #fae901 41px, transparent 0);
-  -webkit-background-size: 41px 100%, 61px 100%, 83px 100%;
-          background-size: 41px 100%, 61px 100%, 83px 100%;
+  background: #3f3f41;
+  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.4) 0, rgba(0, 0, 0, 0.6) 100%), -webkit-linear-gradient(left, aquamarine 11px, transparent 0), -webkit-linear-gradient(left, crimson 23px, transparent 0), -webkit-linear-gradient(left, #fae901 41px, transparent 0);
+  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.4) 0, rgba(0, 0, 0, 0.6) 100%), linear-gradient(90deg, aquamarine 11px, transparent 0), linear-gradient(90deg, crimson 23px, transparent 0), linear-gradient(90deg, #fae901 41px, transparent 0);
+  background-repeat: repeat-x;
+  -webkit-background-size: 100% 80%, calc(30%) 100%, 61px 100%, 83px 100%;
+          background-size: 100% 80%, calc(30%) 100%, 61px 100%, 83px 100%;
 }
 #md-content p,
 #md-content .title,
-#md-content pre,
-#md-content table {
+#md-content table,
+#md-content .md-fences {
   margin: 1.3em 0;
 }
 #md-content blockquote {
@@ -70,42 +80,23 @@ body {
   list-style: circle;
   padding-left: 20px;
 }
-#md-content pre {
-  border: 1px solid #d1d1d1;
-  border-radius: 10px;
-  overflow: hidden;
-  white-space: pre-wrap;
-  -webkit-box-shadow: inset 0px 1px 4px #000;
-          box-shadow: inset 0px 1px 4px #000;
+#md-content .md-fences {
+  width: 100%;
+  overflow-x: scroll;
+  font-size: 13px;
+  background-color: #fdf6e3;
 }
-#md-content .syntaxhighlighter {
-  font-size: 12px !important;
-  -webkit-box-shadow: inset 0px 1px 4px #000;
-          box-shadow: inset 0px 1px 4px #000;
-}
-#md-content .syntaxhighlighter table {
-  margin-top: 10px;
-  font-size: 12px;
-  border: none;
-}
-#md-content .syntaxhighlighter table code {
-  background-color: transparent;
-  border-radius: 2px;
-}
-#md-content .syntaxhighlighter table td,
-#md-content .syntaxhighlighter table tr {
-  border: none;
-  padding: 0;
+#md-content .md-fences pre {
+  white-space: nowrap;
 }
 #md-content table {
   -webkit-box-shadow: 0px 3px 3px #222;
           box-shadow: 0px 3px 3px #222;
   padding: 0;
-  word-break: initial;
   width: 100%;
   border-collapse: collapse;
-  overflow: auto !important;
-  font-size: 12px !important;
+  overflow-x: scroll;
+  font-size: 12px;
 }
 #md-content table tr {
   border-top: 1px solid #dfe2e5;
@@ -117,6 +108,7 @@ body {
   background-color: #3f3f41;
 }
 #md-content table tr th {
+  word-break: keep-all;
   font-weight: bold;
   border: 1px solid #dfe2e5;
   background-color: transparent;
@@ -126,6 +118,7 @@ body {
   padding: 6px 13px;
 }
 #md-content table tr td {
+  word-break: keep-all;
   border: 1px solid #dfe2e5;
   text-align: left;
   margin: 0;
