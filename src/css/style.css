@@ -62,7 +62,7 @@ body {
 }
 #md-content blockquote {
   color: #adadad;
-  background-color: #3d3d3d;
+  background-color: #4c4c4d;
   border-left: 10px solid #adadad;
   padding: 1px 1em;
   -webkit-margin-end: 0;
@@ -84,7 +84,7 @@ body {
   width: 100%;
   overflow-x: scroll;
   font-size: 13px;
-  background-color: #fdf6e3;
+  background-color: #222;
   border-radius: 3px;
 }
 #md-content .md-fences pre {
