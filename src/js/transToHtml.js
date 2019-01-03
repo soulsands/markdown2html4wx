@@ -8,11 +8,18 @@ function transToHtml(content) {
          </h${level}>
          `
     }
-    //包裹section，复制的时候不会去掉，
+    //包裹pre，复制的时候不会去掉，
     rendererMD.code = (text, level, and) => {
-        return `<section class="syntaxhighlighter"><pre class="brush: js"> ${text}
-            </pre></section>
+        // console.log(level);
+        return `<pre class="md-fences"><textarea data-lang="${level}" class="code-mirrow">${text}
+            </textarea></pre>
         `
+    }
+    rendererMD.table = function (thead, tbody) {
+        return `<figure class='table'><table>
+        <thead> ${thead} </thead>
+        <tbody> ${tbody} </tbody>
+        </table></figure>`
     }
     let options = {
         renderer: rendererMD,
@@ -26,7 +33,6 @@ function transToHtml(content) {
 
 function geneIframe(html) {
     console.log(html);
-    
     var iframeCon = document.querySelector('.iframeCon');
     var text; //传递的信息
     var iframe = document.createElement('iframe');
