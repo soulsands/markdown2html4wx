@@ -62,7 +62,7 @@ body {
 }
 #md-content blockquote {
   color: #adadad;
-  background-color: #4c4c4d;
+  background-color: #3f3f41;
   border-left: 10px solid #adadad;
   padding: 1px 1em;
   -webkit-margin-end: 0;
@@ -72,8 +72,8 @@ body {
      -moz-margin-start: 0;
           margin-inline-start: 0;
   font-style: italic;
-  -webkit-box-shadow: inset 0px 0px 4px #222;
-          box-shadow: inset 0px 0px 4px #222;
+  -webkit-box-shadow: inset 0px 0px 2px #222;
+          box-shadow: inset 0px 0px 2px #222;
   border-radius: 3px;
 }
 #md-content ul {
@@ -159,7 +159,7 @@ body {
 #md-content em,
 #md-content del,
 #md-content u {
-  color: #eee;
+  color: #fff;
   border-radius: 3px;
   padding: 0 2px;
   -webkit-box-shadow: inset 0px 0px 2px #333;
