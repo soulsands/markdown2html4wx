@@ -1,26 +1,27 @@
 function transToHtml(content) {
-
     let rendererMD = new marked.Renderer();
-  
     rendererMD.heading = function (text, level) {
         return `<h${level} class='title'>
          <span>${text}</span>
          </h${level}>
          `
     }
-    //包裹pre，复制的时候不会去掉，
-    rendererMD.code = (text, level, and) => {
-        // console.log(level);
-        return `<pre class="md-fences"><textarea data-lang="${level}" class="code-mirrow">${text}
-            </textarea><p></p></pre>
-        `
-    }
+
     rendererMD.table = function (thead, tbody) {
         return `<figure class='table'><table>
         <thead> ${thead} </thead>
         <tbody> ${tbody} </tbody>
         </table></figure>`
     }
+    //包裹pre，复制的时候不会去掉，
+    rendererMD.code = (code, lang, and) => {
+        // console.log(level);
+        code = code.replace(/  /g,'&nbsp;')
+        return `<pre class="md-fences"><textarea data-lang="${lang}" class="code-mirrow">${code}
+            </textarea><p></p></pre>
+        `
+    }
+   
     let options = {
         renderer: rendererMD,
     }

@@ -26,12 +26,14 @@ const os = require('os');
 //   let result = edit(reg).replace(/bull/g,rpReg)
 let rendererMD = new marked.Renderer();
 rendererMD.heading = function (text, level) {
+    
     return `<h${level} class='title'>
      <span>${text}</span>
      </h${level}>
      `
 }
 rendererMD.table = function (thead, tbody) {
+
     return `<figure class='table'><table>
     <thead> ${thead} </thead>
     <tbody> ${tbody} </tbody>
@@ -40,16 +42,25 @@ rendererMD.table = function (thead, tbody) {
 
 }
 //包裹pre，复制的时候不会去掉，
-rendererMD.code = (text, level, and) => {
+rendererMD.code = (code, lang, and) => {
+    // let codelins = 
+    // console.log(code.split('\n'));
+    code = code.replace(/  /g,'&nbsp;')
+    console.log(code);
+    
     // console.log(level);
-    return `<pre class="md-fences"><textarea data-lang="${level}" class="code-mirrow">${text}
-        </textarea><p></p></pre>
-    `
+    return '<pre class="md-fences"><textarea data-lang="'+lang+'" class="code-mirrow">'+code+'</textarea><p></p></pre>'
 }
+rendererMD.html = (code, lang, and) => {
+    // let codelins = 
+    // console.log(code.split('\n'));
+    console.log(code);
+}
+
 marked.setOptions({
     renderer: rendererMD,
 });
-let filename = 'md';
+let filename = 'md1';
 
 let tmp = fs.readFileSync('./tpl.html', 'utf8');
 let str = fs.readFileSync(filename + '.md', 'utf8');

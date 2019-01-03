@@ -72,17 +72,64 @@ markdown的语法类似html，但更简单，掌握十多个标记完全够用�
 **代码块**，这个对于程序员来说必不可少，选定语言，在typora里面可以自动高亮，并且不会格式转换
 
 ```js
-let a = 1;
-```
+     document.addEventListener("dragleave", function (e) {
+    e.preventDefault();
+}, false);
+document.addEventListener("drop", function (e) {
+    e.preventDefault();
+}, false);
+document.addEventListener("dragenter", function (e) {
+    e.preventDefault();
+}, false);
+document.addEventListener("dragover", function (e) {
+    e.preventDefault();
+}, false);
+//拖拽默认事件不要，不然像谷歌浏览器会直接通过浏览器打开文件
+let area = document.querySelector('.area');
+area.addEventListener('drop', (e) => {
+    area.style.border = 'none'
+    e.preventDefault()
+    let files = e.dataTransfer.files;
+    let read = new FileReader();
+    let num = 0;
+	//递归读取，可以同时上传多个文件
+    function readfile(files, callback) {
+        let file = files[num];
+        if (file == null || file == undefined) return
+        read.readAsText(file);
+        read.onload = (file) => {
+            callback(read.result)
+            num++
+            readfile(files, callback)
+        }
+    }
+    readfile(files, (content) => {
+        transToHtml(content);
 
-```html
-<a></a>
-```
+    })
+})
+area.addEventListener('dragover', (e) => {
+    area.style.border = '5px dashed #d8d8d8'
+})
+area.addEventListener("dragleave", function (e) {
+    area.style.border = 'none'
+});
+//btnclick
+let skinBtn = document.querySelector('.btn-skin');
+let uploaBtn = document.querySelector('.upload-btn');
+skinBtn.addEventListener("click", function (e) {
+    uploaBtn.click()
+});
+uploaBtn.addEventListener("change", function (e) {
+    let files = uploaBtn.files;
+    var reader = new FileReader();
+    reader.readAsText(files[0]);
+    reader.onload = function () {
+        let content = reader.result;
+        transToHtml(content);
+    }
+});
 
-```css
-a{
-    color:red;
-}
 ```
 
 

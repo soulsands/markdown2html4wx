@@ -34,8 +34,6 @@
         wrapper.innerHTML = window.parent.mdContent;
 
         let codeBlocks = document.querySelectorAll('.code-mirrow');
-
-
         for (let index = 0; index < codeBlocks.length; index++) {
             const element = codeBlocks[index];
             let lang = element.dataset.lang;
@@ -46,8 +44,6 @@
                 css: 'css'
             }
             console.log(match[lang]);
-
-
             CodeMirror.fromTextArea(element, {
                 readOnly: 'nocursor',
                 theme: 'solarized dark',

@@ -33,7 +33,7 @@ area.addEventListener('drop', (e) => {
         transToHtml(content);
 
     })
-
+    
 })
 area.addEventListener('dragover', (e) => {
     area.style.border = '5px dashed #d8d8d8'

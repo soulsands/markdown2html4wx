@@ -87,9 +87,6 @@ body {
   background-color: #222;
   border-radius: 3px;
 }
-#md-content .md-fences pre {
-  white-space: nowrap;
-}
 #md-content .md-fences p {
   height: 0;
   margin: 0;

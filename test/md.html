@@ -65,19 +65,70 @@
 <p><strong>链接</strong>，<code>[链接内容](链接url)</code></p>
 <hr>
 <p><strong>代码块</strong>，这个对于程序员来说必不可少，选定语言，在typora里面可以自动高亮，并且不会格式转换</p>
-<pre class="md-fences"><textarea data-lang="js" class="code-mirrow">let a = 1;
-        </textarea><p></p></pre>
-    <pre class="md-fences"><textarea data-lang="html" class="code-mirrow"><a></a>
-        </textarea><p></p></pre>
-    <pre class="md-fences"><textarea data-lang="css" class="code-mirrow">a{
-    color:red;
-}
+<pre class="md-fences"><textarea data-lang="js" class="code-mirrow">&nbsp;&nbsp; document.addEventListener("dragleave", function (e) {
+&nbsp;&nbsp;e.preventDefault();
+}, false);
+document.addEventListener("drop", function (e) {
+&nbsp;&nbsp;e.preventDefault();
+}, false);
+document.addEventListener("dragenter", function (e) {
+&nbsp;&nbsp;e.preventDefault();
+}, false);
+document.addEventListener("dragover", function (e) {
+&nbsp;&nbsp;e.preventDefault();
+}, false);
+//拖拽默认事件不要，不然像谷歌浏览器会直接通过浏览器打开文件
+let area = document.querySelector('.area');
+area.addEventListener('drop', (e) => {
+&nbsp;&nbsp;area.style.border = 'none'
+&nbsp;&nbsp;e.preventDefault()
+&nbsp;&nbsp;let files = e.dataTransfer.files;
+&nbsp;&nbsp;let read = new FileReader();
+&nbsp;&nbsp;let num = 0;
+&nbsp;&nbsp;//递归读取，可以同时上传多个文件
+&nbsp;&nbsp;function readfile(files, callback) {
+&nbsp;&nbsp;&nbsp;&nbsp;let file = files[num];
+&nbsp;&nbsp;&nbsp;&nbsp;if (file == null || file == undefined) return
+&nbsp;&nbsp;&nbsp;&nbsp;read.readAsText(file);
+&nbsp;&nbsp;&nbsp;&nbsp;read.onload = (file) => {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;callback(read.result)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num++
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;readfile(files, callback)
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;}
+&nbsp;&nbsp;readfile(files, (content) => {
+&nbsp;&nbsp;&nbsp;&nbsp;transToHtml(content);
+
+&nbsp;&nbsp;})
+})
+area.addEventListener('dragover', (e) => {
+&nbsp;&nbsp;area.style.border = '5px dashed #d8d8d8'
+})
+area.addEventListener("dragleave", function (e) {
+&nbsp;&nbsp;area.style.border = 'none'
+});
+//btnclick
+let skinBtn = document.querySelector('.btn-skin');
+let uploaBtn = document.querySelector('.upload-btn');
+skinBtn.addEventListener("click", function (e) {
+&nbsp;&nbsp;uploaBtn.click()
+});
+uploaBtn.addEventListener("change", function (e) {
+&nbsp;&nbsp;let files = uploaBtn.files;
+&nbsp;&nbsp;var reader = new FileReader();
+&nbsp;&nbsp;reader.readAsText(files[0]);
+&nbsp;&nbsp;reader.onload = function () {
+&nbsp;&nbsp;&nbsp;&nbsp;let content = reader.result;
+&nbsp;&nbsp;&nbsp;&nbsp;transToHtml(content);
+&nbsp;&nbsp;}
+});
+
         </textarea><p></p></pre>
     <p><strong>表格</strong></p>
-<pre class="md-fences"><textarea data-lang="js" class="code-mirrow">| First Header  | Second Header |
+<pre class="md-fences"><textarea data-lang="js" class="code-mirrow">| First Header&nbsp;| Second Header |
 | ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+| Content Cell&nbsp;| Content Cell&nbsp;|
+| Content Cell&nbsp;| Content Cell&nbsp;|
         </textarea><p></p></pre>
     <figure class='table'><table>
     <thead> <tr>
