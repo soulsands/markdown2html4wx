@@ -90,6 +90,10 @@ body {
 #md-content .md-fences pre {
   white-space: nowrap;
 }
+#md-content .md-fences p {
+  height: 0;
+  margin: 0;
+}
 #md-content .table {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;

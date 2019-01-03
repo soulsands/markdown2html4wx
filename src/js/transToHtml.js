@@ -12,7 +12,7 @@ function transToHtml(content) {
     rendererMD.code = (text, level, and) => {
         // console.log(level);
         return `<pre class="md-fences"><textarea data-lang="${level}" class="code-mirrow">${text}
-            </textarea></pre>
+            </textarea><p></p></pre>
         `
     }
     rendererMD.table = function (thead, tbody) {

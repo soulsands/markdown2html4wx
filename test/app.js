@@ -1,6 +1,6 @@
 const fs = require('fs');
 const marked = require('marked');
-var md = require('markdown-it')();
+// var md = require('markdown-it')();
 
 const os = require('os');
 // debugger
@@ -43,7 +43,7 @@ rendererMD.table = function (thead, tbody) {
 rendererMD.code = (text, level, and) => {
     // console.log(level);
     return `<pre class="md-fences"><textarea data-lang="${level}" class="code-mirrow">${text}
-        </textarea></pre>
+        </textarea><p></p></pre>
     `
 }
 marked.setOptions({
