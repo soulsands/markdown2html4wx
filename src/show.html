@@ -30,31 +30,33 @@
     </article>
     <span class="thank">.</span>
     <script>
-        let wrapper = document.querySelector('#md-content');
-        wrapper.innerHTML = window.parent.mdContent;
+        window.onload = function () {
+            let wrapper = document.querySelector('#md-content');
+            wrapper.innerHTML = window.parent.mdContent;
 
-        let codeBlocks = document.querySelectorAll('.code-mirrow');
-        for (let index = 0; index < codeBlocks.length; index++) {
-            const element = codeBlocks[index];
-            let lang = element.dataset.lang;
-            let match = {
-                js: 'javascript',
-                javascript: 'javascript',
-                html: "htmlmixed",
-                css: 'css'
-            }
-            console.log(match[lang]);
-            CodeMirror.fromTextArea(element, {
-                readOnly: 'nocursor',
-                theme: 'solarized dark',
-                mode: {
-                    name: match[lang] || 'javascript',
-                    scriptTypes: [{
-                        matches: /\/x-handlebars-template|\/x-mustache/i,
-                        mode: null
-                    }]
+            let codeBlocks = document.querySelectorAll('.code-mirrow');
+            for (let index = 0; index < codeBlocks.length; index++) {
+                const element = codeBlocks[index];
+                let lang = element.dataset.lang;
+                let match = {
+                    js: 'javascript',
+                    javascript: 'javascript',
+                    html: "htmlmixed",
+                    css: 'css'
                 }
-            });
+                console.log(match[lang]);
+                CodeMirror.fromTextArea(element, {
+                    readOnly: 'nocursor',
+                    theme: 'solarized dark',
+                    mode: {
+                        name: match[lang] || 'javascript',
+                        scriptTypes: [{
+                            matches: /\/x-handlebars-template|\/x-mustache/i,
+                            mode: null
+                        }]
+                    }
+                });
+            }
         }
     </script>
 </body>
