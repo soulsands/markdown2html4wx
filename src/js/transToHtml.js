@@ -41,8 +41,8 @@ function geneIframe(html) {
         // iframe.style = "display:none;",
         iframe.name = "polling",
         iframe.src = "src/show.html";
-        iframe.width = "360px";
-        iframe.height = "475px";
+        iframe.width = "375px";
+        iframe.height = "667px";
     iframeCon.appendChild(iframe);
     iframe.onload = function () {
 

@@ -9,6 +9,7 @@ body {
   word-break: initial;
   overflow: hidden;
   padding: 0 2px 0 2px;
+  font-size: 16px;
 }
 #md-content h1,
 #md-content h2 {
@@ -55,10 +56,12 @@ body {
           background-size: 100% 80%, calc(40%) 100%, 61px 100%, 83px 100%;
 }
 #md-content p,
-#md-content .title,
 #md-content table,
 #md-content .md-fences {
-  margin: 1.3em 0;
+  margin: 1.8em 0;
+}
+#md-content .title {
+  margin: 2.4em 0;
 }
 #md-content blockquote {
   color: #adadad;
@@ -81,7 +84,6 @@ body {
   padding-left: 20px;
 }
 #md-content .md-fences {
-  width: 100%;
   overflow-x: scroll;
   font-size: 13px;
   background-color: #222;
@@ -163,10 +165,12 @@ body {
           box-shadow: inset 0px 0px 2px #333;
 }
 #md-content a {
-  color: #37b2e2;
+  color: inherit;
+  text-decoration: unset;
 }
 #md-content code {
   background-color: #3d3d3d;
   border-radius: 2px;
+  color: skyblue;
 }
 /*# sourceMappingURL=./style.css.map */

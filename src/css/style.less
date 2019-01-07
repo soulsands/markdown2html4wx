@@ -18,6 +18,7 @@ body {
     word-break: initial;
     overflow: hidden;
     padding: 0 2px 0 2px;
+    font-size: 16px;
     h1,
     h2 {
         text-align: center;
@@ -53,10 +54,12 @@ body {
         }
     }
     p,
-    .title,
     table,
     .md-fences {
-        margin: 1.3em 0;
+        margin: 1.8em 0;
+    }
+    .title{
+        margin: 2.4em 0;
     }
     blockquote {
         color: @mid-font;
@@ -76,7 +79,7 @@ body {
         padding-left: 20px;
     }
     .md-fences {
-        width: 100%;
+        // width: 100%;
         overflow-x: scroll;
         font-size: 13px;
         background-color: #222;
@@ -157,10 +160,12 @@ body {
         box-shadow: inset 0px 0px 2px #333; // background-color: @deep-bg;
     }
     a {
-        color: rgb(55, 178, 226);
+        color:inherit;
+        text-decoration: unset;
     }
     code {
         background-color: @dark-font;
         border-radius: 2px;
+        color: skyblue;
     }
 }
