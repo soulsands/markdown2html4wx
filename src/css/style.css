@@ -3,32 +3,145 @@ body {
   margin: 0;
   padding: 0 8px;
 }
-#md-content {
-  color: #d1d1d1;
-  background-color: #4c4c4d;
+.md-content {
   word-break: initial;
   overflow: hidden;
   padding: 0 2px 0 2px;
   font-size: 16px;
 }
-#md-content h1,
-#md-content h2 {
+.md-content h1,
+.md-content h2 {
   text-align: center;
 }
-#md-content h1 {
+.md-content h1 {
   padding: 5px 0;
   font-size: 1.5em;
 }
-#md-content h2 {
+.md-content h2 {
   font-size: 1.4em;
 }
-#md-content h3 {
+.md-content h3 {
   font-size: 1.2em;
 }
-#md-content h4 {
+.md-content h4 {
   font-size: 1em;
 }
-#md-content .title {
+.md-content p,
+.md-content table,
+.md-content .md-fences {
+  margin: 1.8em 0;
+}
+.md-content .title {
+  margin: 2.4em 0;
+}
+.md-content blockquote {
+  padding: 1px 1em;
+  -webkit-margin-end: 0;
+     -moz-margin-end: 0;
+          margin-inline-end: 0;
+  -webkit-margin-start: 0;
+     -moz-margin-start: 0;
+          margin-inline-start: 0;
+  border-radius: 3px;
+}
+.md-content ul {
+  list-style: circle;
+  padding-left: 20px;
+}
+.md-content .md-fences {
+  overflow-x: scroll;
+  font-size: 13px;
+  background-color: #222;
+  border-radius: 3px;
+}
+.md-content .md-fences p {
+  height: 0;
+  margin: 0;
+}
+.md-content .table {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 1.2em 0;
+  overflow-x: auto;
+}
+.md-content table {
+  border-radius: 3px;
+  padding: 0;
+  width: 100%;
+  border-collapse: collapse;
+  overflow-x: scroll;
+  font-size: 12px;
+}
+.md-content table tr {
+  border-top: 1px solid #dfe2e5;
+  margin: 0;
+  padding: 0;
+}
+.md-content thead {
+  background-color: #3f3f41;
+}
+.md-content table tr th {
+  word-break: keep-all;
+  font-weight: bold;
+  border: 1px solid #dfe2e5;
+  background-color: transparent;
+  border-bottom: 0;
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px;
+}
+.md-content table tr td {
+  word-break: keep-all;
+  border: 1px solid #dfe2e5;
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px;
+}
+.md-content table tr th:first-child,
+.md-content table tr td:first-child {
+  margin-top: 0;
+}
+.md-content table tr th:last-child,
+.md-content table tr td:last-child {
+  margin-bottom: 0;
+}
+.md-content strong,
+.md-content em,
+.md-content del,
+.md-content u {
+  color: #fff;
+  border-radius: 3px;
+  padding: 0 2px;
+  -webkit-box-shadow: inset 0px 0px 2px #333;
+          box-shadow: inset 0px 0px 2px #333;
+}
+.md-content a {
+  color: inherit;
+  text-decoration: unset;
+}
+.md-content code {
+  border-radius: 2px;
+  color: skyblue;
+}
+.black-board.md-content {
+  color: #d1d1d1;
+  background-color: #4c4c4d;
+}
+.black-board.md-content blockquote {
+  color: #adadad;
+  background-color: #3f3f41;
+  border-left: 10px solid #adadad;
+  -webkit-box-shadow: inset 0px 0px 2px #222;
+          box-shadow: inset 0px 0px 2px #222;
+}
+.black-board.md-content table tr:nth-child(2n),
+.black-board.md-content thead {
+  background-color: #3f3f41;
+}
+.black-board.md-content code {
+  background-color: #3d3d3d;
+}
+.black-board.md-content .title {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -38,10 +151,9 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
 }
-#md-content .title span {
+.black-board.md-content .title span {
   padding-top: 20px;
   display: block;
-  color: #d8d8d8;
   border-radius: 2px;
   padding: 0 30px;
   -webkit-box-shadow: inset 0px 6px 4px -4px rgba(0, 0, 0, 0.4);
@@ -55,93 +167,7 @@ body {
   -webkit-background-size: 100% 80%, calc(40%) 100%, 61px 100%, 83px 100%;
           background-size: 100% 80%, calc(40%) 100%, 61px 100%, 83px 100%;
 }
-#md-content p,
-#md-content table,
-#md-content .md-fences {
-  margin: 1.8em 0;
-}
-#md-content .title {
-  margin: 2.4em 0;
-}
-#md-content blockquote {
-  color: #adadad;
-  background-color: #3f3f41;
-  border-left: 10px solid #adadad;
-  padding: 1px 1em;
-  -webkit-margin-end: 0;
-     -moz-margin-end: 0;
-          margin-inline-end: 0;
-  -webkit-margin-start: 0;
-     -moz-margin-start: 0;
-          margin-inline-start: 0;
-  font-style: italic;
-  -webkit-box-shadow: inset 0px 0px 2px #222;
-          box-shadow: inset 0px 0px 2px #222;
-  border-radius: 3px;
-}
-#md-content ul {
-  list-style: circle;
-  padding-left: 20px;
-}
-#md-content .md-fences {
-  overflow-x: scroll;
-  font-size: 13px;
-  background-color: #222;
-  border-radius: 3px;
-}
-#md-content .md-fences p {
-  height: 0;
-  margin: 0;
-}
-#md-content .table {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  margin: 1.2em 0;
-  overflow-x: auto;
-}
-#md-content table {
-  border-radius: 3px;
-  padding: 0;
-  width: 100%;
-  border-collapse: collapse;
-  overflow-x: scroll;
-  font-size: 12px;
-}
-#md-content table tr {
-  border-top: 1px solid #dfe2e5;
-  margin: 0;
-  padding: 0;
-}
-#md-content table tr:nth-child(2n),
-#md-content thead {
-  background-color: #3f3f41;
-}
-#md-content table tr th {
-  word-break: keep-all;
-  font-weight: bold;
-  border: 1px solid #dfe2e5;
-  background-color: transparent;
-  border-bottom: 0;
-  text-align: left;
-  margin: 0;
-  padding: 6px 13px;
-}
-#md-content table tr td {
-  word-break: keep-all;
-  border: 1px solid #dfe2e5;
-  text-align: left;
-  margin: 0;
-  padding: 6px 13px;
-}
-#md-content table tr th:first-child,
-#md-content table tr td:first-child {
-  margin-top: 0;
-}
-#md-content table tr th:last-child,
-#md-content table tr td:last-child {
-  margin-bottom: 0;
-}
-#md-content hr {
+.black-board.md-content hr {
   background: #f0e2db;
   background-image: -webkit-linear-gradient(left, aquamarine 11px, transparent 0), -webkit-linear-gradient(left, crimson 23px, transparent 0), -webkit-linear-gradient(left, #fae901 41px, transparent 0);
   background-image: linear-gradient(90deg, aquamarine 11px, transparent 0), linear-gradient(90deg, crimson 23px, transparent 0), linear-gradient(90deg, #fae901 41px, transparent 0);
@@ -154,23 +180,54 @@ body {
   border-radius: 3px;
   margin: 1em 5% 3em;
 }
-#md-content strong,
-#md-content em,
-#md-content del,
-#md-content u {
-  color: #fff;
-  border-radius: 3px;
-  padding: 0 2px;
-  -webkit-box-shadow: inset 0px 0px 2px #333;
-          box-shadow: inset 0px 0px 2px #333;
+.old-time.md-content {
+  color: #586e75;
+  background-color: #fdf6e3;
+  background: -webkit-gradient(linear, left top, right top, color-stop(0, #fdf6e3), to(#f8f3e6));
+  background: -webkit-linear-gradient(left, #fdf6e3 0, #f8f3e6 100%);
+  background: linear-gradient(90deg, #fdf6e3 0, #f8f3e6 100%);
 }
-#md-content a {
-  color: inherit;
-  text-decoration: unset;
+.old-time.md-content blockquote {
+  border-left: 4px solid #b58900;
+  padding: 0 15px;
+  color: #93a1a1;
 }
-#md-content code {
-  background-color: #3d3d3d;
+.old-time.md-content table tr:nth-child(2n),
+.old-time.md-content code {
+  background-color: #eee8d5;
+}
+.old-time.md-content .title {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.old-time.md-content .title span {
+  display: block;
   border-radius: 2px;
-  color: skyblue;
+  padding-left: 40px;
+  padding-right: 30px;
+  -webkit-transform: translate3d(100);
+          transform: translate3d(100);
+  background: url(https://mmbiz.qpic.cn/mmbiz_png/91e8MzxLC0FWPqObY7rE3iczcQpbpCouW7U3f9IfNFgiaowAcOwyCyKDNN6r63HpAjDRhn2lUgL6Q4YzbdqqBbgw/0?wx_fmt=png) no-repeat left center;
+  -webkit-background-size: contain;
+          background-size: contain;
+}
+.old-time.md-content hr {
+  background: #f0e2db;
+  background-image: -webkit-linear-gradient(left, #b58900 11px, transparent 0), -webkit-linear-gradient(left, crimson 23px, transparent 0), -webkit-linear-gradient(left, #fae901 41px, transparent 0);
+  background-image: linear-gradient(90deg, #b58900 11px, transparent 0), linear-gradient(90deg, crimson 23px, transparent 0), linear-gradient(90deg, #fae901 41px, transparent 0);
+  -webkit-background-size: 41px 100%, 61px 100%, 83px 100%;
+          background-size: 41px 100%, 61px 100%, 83px 100%;
+  border: none;
+  height: 3px;
+  -webkit-box-shadow: inset 0px 0px 3px rgba(255, 255, 255, 0.5);
+          box-shadow: inset 0px 0px 3px rgba(255, 255, 255, 0.5);
+  border-radius: 3px;
+  margin: 1em 5% 3em;
 }
 /*# sourceMappingURL=./style.css.map */

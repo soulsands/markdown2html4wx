@@ -26,12 +26,12 @@
 </head>
 
 <body>
-    <article id="md-content">
+    <article class="old-time md-content" >
     </article>
     <span class="thank">.</span>
     <script>
         window.onload = function () {
-            let wrapper = document.querySelector('#md-content');
+            let wrapper = document.querySelector('.md-content');
             wrapper.innerHTML = window.parent.mdContent;
 
             let codeBlocks = document.querySelectorAll('.code-mirrow');

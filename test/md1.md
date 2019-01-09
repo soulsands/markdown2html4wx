@@ -168,7 +168,7 @@ function transToHtml(content) {
     //包裹pre，复制的时候不会去掉，
     rendererMD.code = (text, level, and) => {
         // console.log(level);
-        // return `<pre class="md-fences"><textarea data-lang="${level}" class="code-mirrow">${text}</textarea><p></p></pre>`
+        // return `<pre class="md-fences"><textarea1 data-lang="${level}" class="code-mirrow">${text}</textarea1><p></p></pre>`
     }
    
     //微信对table样式做了限制，这里外面包一层<figure>标签，用来操纵背景色
